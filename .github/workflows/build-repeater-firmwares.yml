@@ -3,12 +3,20 @@ name: Build Repeater Firmwares
 permissions:
   contents: write
 
+#on:
+#  workflow_dispatch:
+#  push:
+#    tags:
+#      - 'repeater-*'
+
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - 'repeater-*'
-
+    inputs:
+      target_board:
+        description: 'Sélectionnez la carte à compiler (laisser vide pour compiler uniquement RAK 1W et Heltec V4)'
+        required: false
+        default: 'rak4631_1w heltec_v4'
+      
 jobs:
   build-repeater-firmwares:
     uses: ./.github/workflows/firmware-builder.yml
