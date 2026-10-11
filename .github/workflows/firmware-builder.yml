@@ -56,7 +56,7 @@ jobs:
         env:
           FIRMWARE_VERSION: ${{ env.GIT_TAG_VERSION }}
         #run: /usr/bin/env bash build.sh build-firmware ${{ matrix.target }}
-        run: /usr/bin/env bash build.sh build-firmware RAK_4631_repeater
+        run: /usr/bin/env bash build.sh build-firmware RAK_3401_repeater
 
 
       - name: Upload Workflow Artifacts
